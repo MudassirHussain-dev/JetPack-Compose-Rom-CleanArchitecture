@@ -6,6 +6,7 @@ import com.example.jetpackcomposeroomcrud.feature_note.data.data_source.NoteData
 import com.example.jetpackcomposeroomcrud.feature_note.data.repository.NoteRepositoryImpl
 import com.example.jetpackcomposeroomcrud.feature_note.domain.repository.NoteRepository
 import com.example.jetpackcomposeroomcrud.feature_note.domain.use_cause.AddNote
+import com.example.jetpackcomposeroomcrud.feature_note.domain.use_cause.GetNote
 import com.example.jetpackcomposeroomcrud.feature_note.domain.use_cause.GetNotes
 import com.example.jetpackcomposeroomcrud.feature_note.domain.use_cause.NoteUseCases
 import com.example.jetpackcomposeroomcrud.feature_note.domain.use_cause.delete_note.DeleteNote
@@ -40,7 +41,8 @@ object AppModule {
         return NoteUseCases(
             GetNotes(repository),
             DeleteNote(repository),
-            AddNote(repository)
+            AddNote(repository),
+            GetNote(repository)
         )
     }
 }
